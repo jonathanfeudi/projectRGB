@@ -1,0 +1,9 @@
+/obj/
+/Library/
+/Temp/
+/Logs/
+.vs
+/
+/Assets/**/*.meta
+*.unitypackage
+crashlytics-build.properties
