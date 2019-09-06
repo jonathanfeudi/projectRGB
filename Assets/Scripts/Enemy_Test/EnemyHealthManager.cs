@@ -62,4 +62,27 @@ public class EnemyHealthManager : MonoBehaviour
         // KnockBack
         //enemyController.knockBackCounter = (knockBackCounter);
     }
+
+
+
+    /* // Alternative Flash Enemy when Damaged - NOT TESTED //
+    public float flashTime;
+    Color origionalColor
+    public MeshRenderer renderer;
+    void Start()
+    {
+        origionalColor = renderer.color;
+    }
+    void FlashRed()
+    {
+        renderer.color = Color.red;
+        Invoke("ResetColor", flashTime);
+    }
+    void ResetColor()
+    {
+        renderer.color = origionalColor;
+    }
+    */
+
+
 }
