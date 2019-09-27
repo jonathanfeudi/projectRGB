@@ -14,6 +14,7 @@ TagManager:
   - Blue_Barrier
   - OUTOFBOUNDS
   - Enemy_Projectile
+  - Blue_Arc
   layers:
   - Default
   - TransparentFX

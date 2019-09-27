@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5fc59d8e714a96343bd98158bac2721c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NormalMapTexture: {instanceID: 0}
+  - NormalMapTexture_01: {instanceID: 0}
+  - NormalMapTexture_02: {instanceID: 0}
+  - NormalMapTexture_03: {instanceID: 0}
+  - NormalMapTexture_04: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

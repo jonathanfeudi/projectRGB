@@ -10,10 +10,21 @@ public class EnemyController : MonoBehaviour
 
     public BluePlayerController thePlayer; // Player to Look At
 
+    public GameObject instanceID;
+
     // KnockBack
     public float knockBackForce;
     public float knockBackTime;
     public float knockBackCounter;
+
+    // Look At Player Bool
+    public bool _look = true;
+
+    // Assign Object ID to Variable
+    void Awake()
+    {
+        instanceID = this.gameObject;
+    }
 
 
     // Start is called before the first frame update (Create Event?)
@@ -24,7 +35,6 @@ public class EnemyController : MonoBehaviour
     }
 
     // KnockBack
-
     void OnCollisionEnter(Collision other)  // Collides with Enemy and Wall
     {
         if (other.gameObject.tag == "Projectile")
@@ -52,6 +62,9 @@ public class EnemyController : MonoBehaviour
     // Look at Player
     void Update()
     {
-        transform.LookAt(thePlayer.transform.position);
+        if (_look)
+        {
+            transform.LookAt(thePlayer.transform.position);
+        }
     }
 }

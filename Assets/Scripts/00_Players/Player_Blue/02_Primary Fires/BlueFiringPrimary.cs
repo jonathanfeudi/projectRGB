@@ -5,10 +5,10 @@ using UnityEngine;
 public class BlueFiringPrimary : MonoBehaviour
 {
     // Player Controller
-    private BluePlayerController bluePlayerController;
+    public BluePlayerController bluePlayerController;
 
     // Health Controller
-    private BluePlayerHealthManager blueHealthController;
+    public BluePlayerHealthManager blueHealthController;
 
     // Camera 
     private Camera mainCamera;
@@ -69,10 +69,17 @@ public class BlueFiringPrimary : MonoBehaviour
 
                 // Fire Laser // - Primary 1
                 if (Input.GetMouseButtonDown(0))
+                {
                     bluePlayerController.theGun.isFiringLaser = true;
+                    otherAnimator.SetBool("isFiring", true);
+                }
 
                 if (Input.GetMouseButtonUp(0))
+                {
                     bluePlayerController.theGun.isFiringLaser = false;
+                    otherAnimator.SetBool("isFiring", false);
+                }
+                    
 
                 // Laser - Alt Fire
 
@@ -158,6 +165,13 @@ public class BlueFiringPrimary : MonoBehaviour
                 otherAnimator.SetBool("isRunning", false);
             }
 
+            // Animate Aiming Sprite
+            if ((Input.GetAxisRaw("RHorizontal") != 0) || (Input.GetAxisRaw("RVertical") != 0))
+            {
+                otherAnimator.SetFloat("Aim_X", Input.GetAxis("RHorizontal"));
+                otherAnimator.SetFloat("Aim_Y", -Input.GetAxis("RVertical"));
+            }
+
             //======================================
 
             // Inputs //
@@ -167,7 +181,11 @@ public class BlueFiringPrimary : MonoBehaviour
             if (bluePlayerController.canShoot == true)
             {
                 if (/*Input.GetAxis("RTrigger") > 0 ||*/ Input.GetKey(KeyCode.Joystick1Button7))
+                {
                     bluePlayerController.theGun.isFiringLaser = true;
+                    otherAnimator.SetBool("isFiring", true);
+                }
+
 
                 // Right Bumper - Barrier
 
@@ -195,7 +213,10 @@ public class BlueFiringPrimary : MonoBehaviour
             // Right Trigger - Laser NOT FIRING
 
             if (/*Input.GetAxis("RTrigger") <= 0 ||*/ !Input.GetKey(KeyCode.Joystick1Button7))
+            {
                 bluePlayerController.theGun.isFiringLaser = false;
+                otherAnimator.SetBool("isFiring", false);
+            }
 
             //====================================== Formatted to Have Both GamePad and KeyBoard Controls Together - WILL NEED TO SEPARATE 
 

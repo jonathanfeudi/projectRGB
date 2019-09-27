@@ -80,6 +80,11 @@ public class LightningBoltScript : MonoBehaviour
     [Tooltip("The animation mode for the lightning")]
     public LightningBoltAnimationMode AnimationMode = LightningBoltAnimationMode.PingPong;
 
+    // Enemy, Arc is Associated With
+    public int enemyID; // Object ID number
+
+    public GameObject enemyObject; // Enemy Object
+
     /// <summary>
     /// Assign your own random if you want to have the same lightning appearance
     /// </summary>
@@ -96,15 +101,22 @@ public class LightningBoltScript : MonoBehaviour
     private int animationPingPongDirection = 1;
     private bool orthographic;
 
-    public void RecieveArcParameter(Vector3 startPosition, Vector3 endPosition)
+    public void RecieveArcParameter(Vector3 startPosition, Vector3 endPosition, int _enemyID, GameObject _enemyObject)
     {
         StartPosition = startPosition;
         EndPosition = endPosition;
+        enemyID = _enemyID;
+        enemyObject = _enemyObject;
     }
 
     public void RecieveArcStartPosition(Vector3 startPosition)
     {
         StartPosition = startPosition;
+    }
+
+    public void RecieveArcEndPosition(Vector3 endPosition)
+    {
+        EndPosition = endPosition;
     }
 
     private void GetPerpendicularVector(ref Vector3 directionNormalized, out Vector3 side)
@@ -318,6 +330,15 @@ public class LightningBoltScript : MonoBehaviour
             }
         }
         timer -= Time.deltaTime;
+
+        // Destroy if Enemy Destroys
+        if (enemyObject != null)
+        {
+            if (enemyObject.GetComponent<EnemyHealthManager>().currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     /// <summary>
@@ -342,6 +363,10 @@ public class LightningBoltScript : MonoBehaviour
         }
         else
         {
+            if (enemyObject != null)
+            {
+                EndPosition = enemyObject.transform.position;
+            }
             end = EndPosition;
             //end = EndObject.transform.position + EndPosition;
         }

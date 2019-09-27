@@ -21,6 +21,9 @@ public class BlueOrbArcVFX : MonoBehaviour
     public Vector3 startPosition;
     public Vector3 endPosition;
 
+    public int enemy;
+    public GameObject enemyObject;
+
     // List Enemies
     public List<GameObject> listEnemies;
 
@@ -41,7 +44,14 @@ public class BlueOrbArcVFX : MonoBehaviour
         //foreach loop
         foreach (GameObject newArc in arcObjects)
         {
-            newArc.GetComponent<LightningBoltScript>().RecieveArcStartPosition(blueOrb.transform.position);
+            if (newArc != null)
+            {
+                newArc.GetComponent<LightningBoltScript>().RecieveArcStartPosition(blueOrb.transform.position);
+                if (newArc.GetComponent<LightningBoltScript>().EndPosition == null)
+                {
+                    //newArc.GetComponent<LightningBoltScript>().RecieveArcEndPosition(enemyObject.transform.position);
+                }
+            }
         }
 
     }
@@ -57,6 +67,8 @@ public class BlueOrbArcVFX : MonoBehaviour
             }
             else
             {
+                enemy = other.GetInstanceID();
+                enemyObject = other.GetComponent<EnemyController>().instanceID;
                 listEnemies.Add(other.gameObject);
                 endPosition = other.transform.position;
                 CreateAcr();
@@ -71,6 +83,19 @@ public class BlueOrbArcVFX : MonoBehaviour
         {
             _fired = true;
             endPosition = other.transform.position;
+
+            if (listEnemies.Contains(other.gameObject))
+            {
+                // Do nothing
+            }
+            else if (blueOrbController.fired == true)
+            {
+                enemy = other.GetInstanceID();
+                enemyObject = other.GetComponent<EnemyController>().instanceID;
+                listEnemies.Add(other.gameObject);
+                endPosition = other.transform.position;
+                CreateAcr();
+            }
         }
     }
 
@@ -83,6 +108,19 @@ public class BlueOrbArcVFX : MonoBehaviour
             {
                 listEnemies.Remove(other.gameObject);
             }
+
+            //other.gameObject.GetComponent<Enemy_DestroyBlueArc>().DestroyBlueArc();
+
+            foreach (GameObject newArc in arcObjects)
+            {
+                if (newArc != null)
+                {
+                    if (newArc.GetComponent<LightningBoltScript>().enemyID == other.GetInstanceID())
+                    {
+                        Destroy(newArc.gameObject);
+                    }
+                }
+            }
         }
     }
 
@@ -93,7 +131,7 @@ public class BlueOrbArcVFX : MonoBehaviour
         //Do not forget to set correct position and rotation wich you want.
 
         //Sending to instantiated bulletPrefab the parameters bulletSpeed and bulletrange:
-        newArc.GetComponent<LightningBoltScript>().RecieveArcParameter(blueOrb.transform.position, endPosition);
+        newArc.GetComponent<LightningBoltScript>().RecieveArcParameter(blueOrb.transform.position, endPosition, enemy, enemyObject);
 
         //_arc = obj.GetComponent<LightningBoltScript>();
         arcObjects.Add(newArc);

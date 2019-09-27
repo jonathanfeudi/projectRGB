@@ -59,7 +59,7 @@ public class BlueGunController : MonoBehaviour
     public ParticleSystem impactEffect; // Particle System
 
     public Light impactLight;
-    //public Light handLight;
+    public Light handLight;
 
     // Blue Deployables
     public int barrierCounter;  // Counter for both Turret and Barrier
@@ -83,6 +83,8 @@ public class BlueGunController : MonoBehaviour
         altFire = false;
 
         canDeploy = true;
+
+        canOrb = true;
 
         canHoldBarrier = false;
 
@@ -128,6 +130,7 @@ public class BlueGunController : MonoBehaviour
                 lineRenderer.enabled = true;
                 impactEffect.Play(); // Particles
                 impactLight.enabled = true; // Light
+                handLight.enabled = true; // Light
                 sfx_AudioSource.AudioSource_01.Play();
                 sfx_AudioSource.AudioSource_02.Play();
             }
@@ -148,7 +151,7 @@ public class BlueGunController : MonoBehaviour
         {
             if (bluePlayer.useController == true)
             {
-                if (canOrb == true & Input.GetKeyDown(KeyCode.Joystick1Button7))
+                if (canOrb == true )
                 {
                     BlueOrbController newOrb = Instantiate(orb, orbPoint.position, orbPoint.rotation) as BlueOrbController;
 
@@ -158,7 +161,7 @@ public class BlueGunController : MonoBehaviour
 
             if (bluePlayer.useController == false)
             {
-                if (canOrb == true & Input.GetMouseButtonDown(0))
+                if (canOrb == true)
                 {
                     BlueOrbController newOrb = Instantiate(orb, orbPoint.position, orbPoint.rotation) as BlueOrbController;
 
@@ -279,6 +282,7 @@ public class BlueGunController : MonoBehaviour
         lineRenderer.enabled = false;
         impactEffect.Stop(); // Particles
         impactLight.enabled = false; // Particle Lighting 
+        handLight.enabled = false; // Particle Lighting 
         sfx_AudioSource.AudioSource_01.Stop();
         sfx_AudioSource.AudioSource_02.Stop();
 

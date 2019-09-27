@@ -2,13 +2,38 @@
 
 public class SwapNormals : MonoBehaviour
 {
+    // Movement
     public Texture2D NormalMapTexture;
-    public Texture2D NormalMapTexture_01;
+    public Texture2D NormalMapTexture_00;
     public Texture2D NormalMapTexture_02;
-    public Texture2D NormalMapTexture_03;
     public Texture2D NormalMapTexture_04;
+    public Texture2D NormalMapTexture_06;
 
+    // Roll
+    public Texture2D NormalMapTexture_Roll_00;
+    public Texture2D NormalMapTexture_Roll_02;
+    public Texture2D NormalMapTexture_Roll_04;
+    public Texture2D NormalMapTexture_Roll_06;
 
+    // Fire Primary Idle
+    public Texture2D NormalMapTexture_Fire_Idle_0;
+    public Texture2D NormalMapTexture_Fire_Idle_1;
+    public Texture2D NormalMapTexture_Fire_Idle_2;
+    public Texture2D NormalMapTexture_Fire_Idle_3;
+    public Texture2D NormalMapTexture_Fire_Idle_4;
+    public Texture2D NormalMapTexture_Fire_Idle_5;
+    public Texture2D NormalMapTexture_Fire_Idle_6;
+    public Texture2D NormalMapTexture_Fire_Idle_7;
+
+    // Fire Primary Run
+    public Texture2D NormalMapTexture_Fire_Run_0;
+    public Texture2D NormalMapTexture_Fire_Run_1;
+    public Texture2D NormalMapTexture_Fire_Run_2;
+    public Texture2D NormalMapTexture_Fire_Run_3;
+    public Texture2D NormalMapTexture_Fire_Run_4;
+    public Texture2D NormalMapTexture_Fire_Run_5;
+    public Texture2D NormalMapTexture_Fire_Run_6;
+    public Texture2D NormalMapTexture_Fire_Run_7;
 
     // Use this for initialization
     void Start()
@@ -16,16 +41,10 @@ public class SwapNormals : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         spriteRenderer.material.EnableKeyword("_NORMALMAP");
-
-        //Texture2D _sprite = spriteRenderer.material.mainTexture;
-
-        //meshRenderer.material.GetTexture("_MainTex")
-
-
     }
 
 
-    void Update()
+    void LateUpdate()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -33,55 +52,255 @@ public class SwapNormals : MonoBehaviour
 
         spriteRenderer.material.EnableKeyword("_NORMALMAP");
 
+        // Movement
 
         if (spriteRenderer.sprite.name == "Blue_Idle_0" 
-            || spriteRenderer.sprite.name == "Blue_Idle_1" 
-            || spriteRenderer.sprite.name == "Blue_Idle_2"
-            || spriteRenderer.sprite.name == "Blue_Idle_3"
-            || spriteRenderer.sprite.name == "Blue_Idle_4"
-            || spriteRenderer.sprite.name == "Blue_Idle_5")      
+        || spriteRenderer.sprite.name == "Blue_Idle_1" 
+        || spriteRenderer.sprite.name == "Blue_Idle_2"
+        || spriteRenderer.sprite.name == "Blue_Idle_3"
+        || spriteRenderer.sprite.name == "Blue_Idle_4"
+        || spriteRenderer.sprite.name == "Blue_Idle_5")      
         {
             spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture);
         }
 
         if (spriteRenderer.sprite.name == "Blue_Run_0_South_0"
-            || spriteRenderer.sprite.name == "Blue_Run_0_South_1"
-            || spriteRenderer.sprite.name == "Blue_Run_0_South_2"
-            || spriteRenderer.sprite.name == "Blue_Run_0_South_3"
-            || spriteRenderer.sprite.name == "Blue_Run_0_South_4"
-            || spriteRenderer.sprite.name == "Blue_Run_0_South_5")
+        || spriteRenderer.sprite.name == "Blue_Run_0_South_1"
+        || spriteRenderer.sprite.name == "Blue_Run_0_South_2"
+        || spriteRenderer.sprite.name == "Blue_Run_0_South_3"
+        || spriteRenderer.sprite.name == "Blue_Run_0_South_4"
+        || spriteRenderer.sprite.name == "Blue_Run_0_South_5")
         {
-            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_01);
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_00);
         }
 
         if (spriteRenderer.sprite.name == "Blue_Run_2_East_0"
-            || spriteRenderer.sprite.name == "Blue_Run_2_East_1"
-            || spriteRenderer.sprite.name == "Blue_Run_2_East_2"
-            || spriteRenderer.sprite.name == "Blue_Run_2_East_3"
-            || spriteRenderer.sprite.name == "Blue_Run_2_East_4"
-            || spriteRenderer.sprite.name == "Blue_Run_2_East_5")
+        || spriteRenderer.sprite.name == "Blue_Run_2_East_1"
+        || spriteRenderer.sprite.name == "Blue_Run_2_East_2"
+        || spriteRenderer.sprite.name == "Blue_Run_2_East_3"
+        || spriteRenderer.sprite.name == "Blue_Run_2_East_4"
+        || spriteRenderer.sprite.name == "Blue_Run_2_East_5")
         {
             spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_02);
         }
 
         if (spriteRenderer.sprite.name == "Blue_Run_4_North_0"
-            || spriteRenderer.sprite.name == "Blue_Run_4_North_1"
-            || spriteRenderer.sprite.name == "Blue_Run_4_North_2"
-            || spriteRenderer.sprite.name == "Blue_Run_4_North_3"
-            || spriteRenderer.sprite.name == "Blue_Run_4_North_4"
-            || spriteRenderer.sprite.name == "Blue_Run_4_North_5")
+        || spriteRenderer.sprite.name == "Blue_Run_4_North_1"
+        || spriteRenderer.sprite.name == "Blue_Run_4_North_2"
+        || spriteRenderer.sprite.name == "Blue_Run_4_North_3"
+        || spriteRenderer.sprite.name == "Blue_Run_4_North_4"
+        || spriteRenderer.sprite.name == "Blue_Run_4_North_5")
         {
-            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_03);
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_04);
         }
 
         if (spriteRenderer.sprite.name == "Blue_Run_6_West_0"
-            || spriteRenderer.sprite.name == "Blue_Run_6_West_1"
-            || spriteRenderer.sprite.name == "Blue_Run_6_West_2"
-            || spriteRenderer.sprite.name == "Blue_Run_6_West_3"
-            || spriteRenderer.sprite.name == "Blue_Run_6_West_4"
-            || spriteRenderer.sprite.name == "Blue_Run_6_West_5")
+        || spriteRenderer.sprite.name == "Blue_Run_6_West_1"
+        || spriteRenderer.sprite.name == "Blue_Run_6_West_2"
+        || spriteRenderer.sprite.name == "Blue_Run_6_West_3"
+        || spriteRenderer.sprite.name == "Blue_Run_6_West_4"
+        || spriteRenderer.sprite.name == "Blue_Run_6_West_5")
         {
-            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_04);
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_06);
+        }
+
+
+        // Rolling
+
+        if (spriteRenderer.sprite.name == "Blue_Roll_0_0"
+        || spriteRenderer.sprite.name == "Blue_Roll_0_1"
+        || spriteRenderer.sprite.name == "Blue_Roll_0_2"
+        || spriteRenderer.sprite.name == "Blue_Roll_0_3")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Roll_00);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Roll_2_0"
+        || spriteRenderer.sprite.name == "Blue_Roll_2_1"
+        || spriteRenderer.sprite.name == "Blue_Roll_2_2"
+        || spriteRenderer.sprite.name == "Blue_Roll_2_3")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Roll_02);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Roll_4_0"
+        || spriteRenderer.sprite.name == "Blue_Roll_4_1"
+        || spriteRenderer.sprite.name == "Blue_Roll_4_2"
+        || spriteRenderer.sprite.name == "Blue_Roll_4_3")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Roll_04);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Roll_6_0"
+        || spriteRenderer.sprite.name == "Blue_Roll_6_1"
+        || spriteRenderer.sprite.name == "Blue_Roll_6_2"
+        || spriteRenderer.sprite.name == "Blue_Roll_6_3")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Roll_06);
+        }
+
+        // Firing Laser Idles
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_0_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_0_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_0_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_0_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_0_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_0_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_0);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_1_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_1_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_1_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_1_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_1_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_1_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_1);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_2_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_2_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_2_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_2_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_2_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_2_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_2);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_3_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_3_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_3_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_3_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_3_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_3_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_3);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_4_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_4_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_4_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_4_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_4_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_4_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_4);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_5_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_5_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_5_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_5_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_5_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_5_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_5);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_6_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_6_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_6_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_6_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_6_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_6_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_6);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Idle_7_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_7_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_7_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_7_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_7_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Idle_7_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Idle_7);
+        }
+
+        // Firing Laser Running
+        
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_0_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_0_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_0_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_0_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_0_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_0_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_0);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_1_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_1_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_1_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_1_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_1_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_1_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_1);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_2_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_2_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_2_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_2_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_2_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_2_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_2);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_3_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_3_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_3_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_3_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_3_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_3_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_3);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_4_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_4_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_4_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_4_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_4_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_4_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_4);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_5_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_5_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_5_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_5_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_5_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_5_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_5);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_6_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_6_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_6_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_6_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_6_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_6_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_6);
+        }
+
+        if (spriteRenderer.sprite.name == "Blue_Laser_Run_7_0"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_7_1"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_7_2"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_7_3"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_7_4"
+        || spriteRenderer.sprite.name == "Blue_Laser_Run_7_5")
+        {
+            spriteRenderer.material.SetTexture("_BumpMap", NormalMapTexture_Fire_Run_7);
         }
     }
 }
