@@ -10,6 +10,9 @@ public class Blue_Upgrade_Deployable : MonoBehaviour
     // Blue Gun
     public BlueGunController blueGunController;
 
+    // Animator
+    Animator spriteAnimator;
+
     // Movement
     private Rigidbody myRigidbody;
 
@@ -24,6 +27,12 @@ public class Blue_Upgrade_Deployable : MonoBehaviour
         bluePlayerController = GetComponent<BluePlayerController>();
 
         bluePlayerController.canShoot = false;  // Disable Firing Script
+
+        // Sprite Animator
+        spriteAnimator = bluePlayerController.spriteObject.GetComponent<Animator>();
+
+        // Animate Sprite
+        spriteAnimator.SetBool("isWarping", true);
 
         // Gun Controller
         blueGunController = GameObject.FindGameObjectWithTag("Blue_Gun").GetComponent<BlueGunController>();
@@ -48,6 +57,7 @@ public class Blue_Upgrade_Deployable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetKeyDown(KeyCode.Joystick1Button1)))
         {
             this.enabled = false;
+            spriteAnimator.SetBool("isWarping", false);
             GetComponent<Blue_Idle>().enabled = true;
         }
     }
@@ -56,6 +66,7 @@ public class Blue_Upgrade_Deployable : MonoBehaviour
     void OnDisable()
     {
         Debug.Log("EXIT");
+        spriteAnimator.SetBool("isWarping", false);
         bluePlayerController.canShoot = true;  // Enable Firing Script
     }
 }

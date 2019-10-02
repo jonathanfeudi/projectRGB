@@ -133,6 +133,7 @@
     <Compile Include="Assets\00_Imports\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Editors\AnimationHierarchyEditor.cs" />
     <Compile Include="Assets\Editors\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\ParticleSystemLayer.cs" />
     <Compile Include="Assets\Scripts\00_Players\00_All Players\DetectControlMethod.cs" />
     <Compile Include="Assets\Scripts\00_Players\00_All Players\SpriteTransparency.cs" />
     <Compile Include="Assets\Scripts\00_Players\Player_Blue\00_Managers and Controllers\BlueAudioManager.cs" />

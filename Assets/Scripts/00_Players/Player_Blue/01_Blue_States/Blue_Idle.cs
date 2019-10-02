@@ -54,7 +54,7 @@ public class Blue_Idle : MonoBehaviour
         }
 
         // IDLE to WARP
-        if (/*(Input.GetAxis("LTrigger") > 0*/ (Input.GetKey(KeyCode.Joystick1Button6) && bluePlayerController.deploy_1 != Vector3.zero) || (Input.GetKeyDown("e") && bluePlayerController.deploy_1 != Vector3.zero))
+        if (/*(Input.GetAxis("LTrigger") > 0*/ (Input.GetKeyDown(KeyCode.Joystick1Button6) && bluePlayerController.deploy_1 != Vector3.zero) || (Input.GetKeyDown("e") && bluePlayerController.deploy_1 != Vector3.zero))
         {
             if (bluePlayerController.canShoot == true)
             {

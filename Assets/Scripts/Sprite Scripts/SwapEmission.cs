@@ -2,6 +2,12 @@
 
 public class SwapEmission : MonoBehaviour
 {
+    // Warping Start Up
+    public Texture2D Blue_Warping_StartUp;
+
+    // Warping Choosing
+    public Texture2D Blue_Warping_Choosing;
+
     // Movement
     public Texture2D EmissionMapTexture;
     public Texture2D EmissionMapTexture_00;
@@ -51,6 +57,28 @@ public class SwapEmission : MonoBehaviour
         //spriteRenderer.material.GetTexture("_MainTex");
 
         spriteRenderer.material.EnableKeyword("_EMISSION");
+
+        // Warping Start Up
+        if (spriteRenderer.sprite.name == "Blue_Warping_StartUp_0"
+        || spriteRenderer.sprite.name == "Blue_Warping_StartUp_1"
+        || spriteRenderer.sprite.name == "Blue_Warping_StartUp_2"
+        || spriteRenderer.sprite.name == "Blue_Warping_StartUp_3"
+        || spriteRenderer.sprite.name == "Blue_Warping_StartUp_4"
+        || spriteRenderer.sprite.name == "Blue_Warping_StartUp_5")
+        {
+            spriteRenderer.material.SetTexture("_EmissionMap", Blue_Warping_StartUp);
+        }
+
+        // Warping Choosing
+        if (spriteRenderer.sprite.name == "Blue_Warping_Choosing_0"
+        || spriteRenderer.sprite.name == "Blue_Warping_Choosing_1"
+        || spriteRenderer.sprite.name == "Blue_Warping_Choosing_2"
+        || spriteRenderer.sprite.name == "Blue_Warping_Choosing_3"
+        || spriteRenderer.sprite.name == "Blue_Warping_Choosing_4"
+        || spriteRenderer.sprite.name == "Blue_Warping_Choosing_5")
+        {
+            spriteRenderer.material.SetTexture("_EmissionMap", Blue_Warping_Choosing);
+        }
 
         // Movement
 

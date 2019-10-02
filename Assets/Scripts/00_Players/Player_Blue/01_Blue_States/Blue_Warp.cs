@@ -10,6 +10,9 @@ public class Blue_Warp : MonoBehaviour
     // Blue Gun
     public BlueGunController blueGunController;
 
+    // Animator
+    Animator spriteAnimator;
+
     // Warp Target
     public float targetSwitch = 0;
 
@@ -36,6 +39,12 @@ public class Blue_Warp : MonoBehaviour
         bluePlayerController = GetComponent<BluePlayerController>();
 
         bluePlayerController.canShoot = false;  // Disable Firing Script
+
+        // Sprite Animator
+        spriteAnimator = bluePlayerController.spriteObject.GetComponent<Animator>();
+
+        // Animate Sprite
+        spriteAnimator.SetBool("isWarping", true);
 
         // Gun Controller
         //blueGunController = GetComponent<BlueGunController>();  // NOT NEEDED AS IT IS DRAGGED INTO THE INSPECTOR
@@ -259,6 +268,7 @@ public class Blue_Warp : MonoBehaviour
         {
             triggerDown = false;
             this.enabled = false;
+            spriteAnimator.SetBool("isWarping", false);
             GetComponent<Blue_Idle>().enabled = true;
         }
     }
@@ -268,5 +278,7 @@ public class Blue_Warp : MonoBehaviour
     {
         bluePlayerController.canShoot = true;  // Enable Firing Script
         altWarp = false;
+        // Animate Sprite
+        spriteAnimator.SetBool("isWarping", false);
     }
 }

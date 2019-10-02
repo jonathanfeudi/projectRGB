@@ -20,6 +20,9 @@ public class Blue_Roll : MonoBehaviour
     // Damaged SFX
     public AudioClip blueRollSFX;
 
+    // Particle FX
+    public ParticleSystem rollParticles;
+
     // Counter
     private float counterToIdle = .35f;  //////// NEED TO MATCH
 
@@ -32,6 +35,9 @@ public class Blue_Roll : MonoBehaviour
 
         // Sprite Animator
         spriteAnimator = bluePlayerController.spriteObject.GetComponent<Animator>();
+
+        // Particles
+        //rollParticles.Play();
     }
 
     //======================================
@@ -56,6 +62,9 @@ public class Blue_Roll : MonoBehaviour
         
         // Play DMG SFX
         AudioSource.PlayClipAtPoint(blueRollSFX, transform.position);
+
+        // Particles
+        rollParticles.Play();
     }
 
     void Update()
@@ -88,6 +97,7 @@ public class Blue_Roll : MonoBehaviour
             //GetComponent<CapsuleCollider>().enabled = true;
 
             spriteAnimator.SetBool("isRolling", false);
+            //spriteAnimator.SetBool("isWarping", false);
 
             Physics.IgnoreLayerCollision(9, 20, false);
             Physics.IgnoreLayerCollision(9, 21, false);
@@ -107,6 +117,10 @@ public class Blue_Roll : MonoBehaviour
     {
         // Enable Firing
         GetComponent<BlueFiringPrimary>().enabled = true;
+
+        // Stop Particles
+        // Particles
+        rollParticles.Stop();
     }
 
 }

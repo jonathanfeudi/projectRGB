@@ -2131,6 +2131,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203579485}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &271755099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8700632750204125954, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134770748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &271755100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134770748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &271755101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271755099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82158edb5725fb49a2fd8b99febd065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1690615267}
+  offset: {x: 0, y: -0.5, z: 0.5}
+--- !u!198 &280149080 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6775825434449290288, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134770748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &312582106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +2983,7 @@ Transform:
   m_Children:
   - {fileID: 1690615267}
   - {fileID: 1597459309}
+  - {fileID: 271755100}
   m_Father: {fileID: 865750580}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5740,6 +5773,95 @@ Transform:
   m_Father: {fileID: 193980106}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1001 &1134770748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 512962374}
+    m_Modifications:
+    - target: {fileID: 8700632750204125954, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Blue Dash FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.334122
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.546875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0456257
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493145677991281851, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778615096723767428, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blue_Barrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515445826770465247, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 179403075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515445826770465247, guid: 30bb8a8ee89d236448ca56b2d6500c6c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30bb8a8ee89d236448ca56b2d6500c6c, type: 3}
 --- !u!1 &1162759896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7231,6 +7353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c71bbe0f8657e48b77fcc57421ae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Blue_Warping_StartUp: {fileID: 2800000, guid: ef7271a74c805b347a30ada73f2c81a0,
+    type: 3}
+  Blue_Warping_Choosing: {fileID: 2800000, guid: 84a6e0c141d6cab4faf00733a7e832e7,
+    type: 3}
   NormalMapTexture: {fileID: 2800000, guid: ce914d45072d9124992312969b8d69d4, type: 3}
   NormalMapTexture_00: {fileID: 2800000, guid: 661ebaa4faa2e7d4692f322c7167d258, type: 3}
   NormalMapTexture_02: {fileID: 2800000, guid: f741552ce20823d4e88be12506d56835, type: 3}
@@ -7397,6 +7523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc59d8e714a96343bd98158bac2721c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Blue_Warping_StartUp: {fileID: 2800000, guid: f14a0601c1662d94a9cb35a5c892a448,
+    type: 3}
+  Blue_Warping_Choosing: {fileID: 2800000, guid: c77acb829deea0b4e8acad8b89adb454,
+    type: 3}
   EmissionMapTexture: {fileID: 2800000, guid: 7adbea1009a59ea4b85eb79cf67b152e, type: 3}
   EmissionMapTexture_00: {fileID: 2800000, guid: 2eeba691b14cba342be40f7a1abbc1f1,
     type: 3}
@@ -7925,6 +8055,7 @@ MonoBehaviour:
   moveVelocity: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   blueRollSFX: {fileID: 8300000, guid: 72cbda1dd37b56d4ba5ee5d5e768886f, type: 3}
+  rollParticles: {fileID: 280149080}
 --- !u!114 &1690615276
 MonoBehaviour:
   m_ObjectHideFlags: 0
